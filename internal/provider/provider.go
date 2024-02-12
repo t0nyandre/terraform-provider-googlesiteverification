@@ -111,7 +111,7 @@ func (p *GoogleSiteVerificationProvider) Configure(ctx context.Context, req prov
 		return
 	}
 	dnsservice, err := dnsv2.NewService(ctx,
-		option.WithCredentials(defaultCreds),
+		option.WithCredentials(creds),
 		option.WithScopes(dnsv2.NdevClouddnsReadwriteScope))
 	if err != nil {
 		resp.Diagnostics.AddError("Failed to create dns client", err.Error())
